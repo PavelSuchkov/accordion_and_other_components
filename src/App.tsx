@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
 import {Rating} from "./components/Rating/Rating";
@@ -6,8 +6,11 @@ import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 
 
-
+export type NumberValue = 0 | 1 | 2 | 3 | 4 | 5
 function App() {
+
+    const [ratingValue, setRatingValue] = useState<NumberValue>(0)
+
     return (
         <div className="App">
 
@@ -16,15 +19,12 @@ function App() {
             <OnOff />
             <OnOff />
             <PageTitle title={"This is app component"}/>
-            <PageTitle title={"Page title"}/>
             Article 1
-            <Rating value={3}/>
             <UncontrolledAccordion titleValue={"Menu"} />
             <UncontrolledAccordion titleValue={"Users"} />
             Article 2
-            <Rating value={4}/>
-            <Rating value={3}/>
-            <Rating value={2}/>
+            <Rating value={ratingValue} setRatingValue= {setRatingValue}/>
+            <Rating value={ratingValue} setRatingValue= {setRatingValue}/>
 
         </div>
     )
