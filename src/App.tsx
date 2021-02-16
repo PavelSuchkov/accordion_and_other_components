@@ -9,7 +9,7 @@ import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion"
 function App() {
 
     return (
-        <div className="App">
+        <div className={"App"}>
 
             <OnOff />
             <Rating />

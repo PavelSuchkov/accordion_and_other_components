@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 type OnOffType = {
     // on: boolean
+    // off: boolean
 }
 
 
