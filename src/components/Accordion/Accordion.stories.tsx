@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import {action} from "@storybook/addon-actions";
 import {Accordion, AccordionPropsType} from "./Accordion";
 import {Story} from "@storybook/react/types-6-0";
@@ -11,7 +10,7 @@ export default {
 }
 
 const callBack = action('was clicked');
-
+const onItemClickCallback = action(`some item was clicked`)
 
 const Template: Story<AccordionPropsType> = (args) => <Accordion {...args} />
 
@@ -19,15 +18,34 @@ export const MenuCollapsedMode = Template.bind({});
 MenuCollapsedMode.args = {
     titleValue: 'MenuCollapsedMode',
     collapsed: true,
-    onClick: callBack
+    onChange: callBack
 }
 
-export const CollapsedMode = () => <Accordion titleValue={'CollapsedMode'} collapsed={true} onClick={callBack}/>
-export const UnCollapsedMode = () => <Accordion titleValue={'UnCollapsedMode'} collapsed={false} onClick={callBack}/>
+export const CollapsedMode = () => <Accordion titleValue={'CollapsedMode'}
+                                              collapsed={true}
+                                              onChange={callBack}
+                                              onClick={onItemClickCallback}
+                                              items={[]}/>
+
+export const UnCollapsedMode = () => <Accordion titleValue={'UnCollapsedMode'}
+                                                collapsed={false}
+                                                onChange={callBack}
+                                                onClick={onItemClickCallback}
+                                                items={[{title: 'React', value: 1},
+                                                    {title: `Js`, value: 2},
+                                                    {title: `Redux`, value: 3},
+                                                    {title: `Html`, value: 4}]}/>
 
 export const ChangeAccordionMode = () => {
     const [value, setValue] = useState<boolean>(true);
-    return <Accordion titleValue={'Change'} collapsed={value} onClick={() => setValue(!value)}/>
+    return <Accordion titleValue={'Skills'}
+                      collapsed={value}
+                      onChange={() => setValue(!value)}
+                      onClick={onItemClickCallback}
+                      items={[{title: 'React', value: 1},
+                          {title: `Js`, value: 2},
+                          {title: `Redux`, value: 3},
+                          {title: `Html`, value: 4}]}/>
 };
 
 

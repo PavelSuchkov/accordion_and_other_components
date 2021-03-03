@@ -29,9 +29,10 @@ function App() {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <PageTitle title={"This is app component"}/>
             <UncontrolledAccordion titleValue={"uncontrolled Users"}/>*/}
-           {/* <Accordion titleValue={"controlled  Accordion"}
+         {/*   <Accordion titleValue={"controlled  Accordion"}
                        collapsed={accordionCollapsed}
-                       onClick={setAccordionCollapsed}/>*/}
+                       onClick={setAccordionCollapsed}
+            />*/}
         </div>
     )
 }
@@ -39,7 +40,6 @@ function App() {
 type PageTitlePropsType = {
     title: string
 }
-
 
 function PageTitle(props: PageTitlePropsType) {
     return <h1>{props.title}</h1>
