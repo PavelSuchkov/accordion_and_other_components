@@ -6,6 +6,7 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion/Uncontroll
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {Select} from "./components/Select/Select";
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
 
     return (
         <div className={"App"}>
-            <UncontrolledRating />
+            {/*<Select />*/}
+            {/*<UncontrolledRating />*/}
         {/*    <OnOff on={on} onClick={setOnHandler}/>
             <OnOff on={on} onClick={setOnHandler}/>
             <UnContrOnOff/>

@@ -1,14 +1,10 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
-import {Simulate} from "react-dom/test-utils";
 import {action} from "@storybook/addon-actions";
-import {OnOff} from "../OnOff/OnOff";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 
 
 export default {
     title: 'input',
-    // component: input
-    // component: OnOff
 };
 
 export const UncontrolledInput = () => <input/>
