@@ -24,13 +24,13 @@ function App() {
         <div className={"App"}>
             {/*<Select />*/}
             {/*<UncontrolledRating />*/}
-        {/*    <OnOff on={on} onClick={setOnHandler}/>
+          {/*  <OnOff on={on} onClick={setOnHandler}/>
             <OnOff on={on} onClick={setOnHandler}/>
             <UnContrOnOff/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <PageTitle title={"This is app component"}/>
-            <UncontrolledAccordion titleValue={"uncontrolled Users"}/>*/}
+            <PageTitle title={"This is app component"}/>*/}
+            <UncontrolledAccordion titleValue={"uncontrolled Users"}/>
          {/*   <Accordion titleValue={"controlled  Accordion"}
                        collapsed={accordionCollapsed}
                        onClick={setAccordionCollapsed}
