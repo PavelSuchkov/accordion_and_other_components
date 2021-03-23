@@ -4,6 +4,10 @@ import {reducer, TOGGLE_COLLAPSED} from "./reducer";
 type AccordionPropsType = {
     titleValue: string;
 }
+/*
+const  reducer = () => {
+
+}*/
 
 
 function UncontrolledAccordion(props: AccordionPropsType) {
