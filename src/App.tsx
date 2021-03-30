@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Accordion} from './components/Accordion/Accordion';
-import UnContrOnOff from "./components/UncontrolledOnOff/UnContrOnOff";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOff/OnOff";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-import {Select} from "./components/Select/Select";
+import {AccordionMemo} from './components/Accordion/Accordion';
+import {UnContrOnOffMemo} from "./components/UncontrolledOnOff/UnContrOnOff";
+import {UncontrolledAccordionMemo} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {RatingMemo, RatingValueType} from "./components/Rating/Rating";
+import {OnOffMemo} from "./components/OnOff/OnOff";
+import {UncontrolledRatingMemo} from "./components/UncontrolledRating/UncontrolledRating";
+import {Select, SelectMemo} from "./components/Select/Select";
 
 
 function App() {
@@ -20,21 +20,18 @@ function App() {
         setOn(value)
     }
 
+
     return (
         <div className={"App"}>
-            {/*<Select />*/}
-            {/*<UncontrolledRating />*/}
-          {/*  <OnOff on={on} onClick={setOnHandler}/>
-            <OnOff on={on} onClick={setOnHandler}/>
-            <UnContrOnOff/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <PageTitle title={"This is app component"}/>*/}
-            <UncontrolledAccordion titleValue={"uncontrolled Users"}/>
-         {/*   <Accordion titleValue={"controlled  Accordion"}
-                       collapsed={accordionCollapsed}
-                       onClick={setAccordionCollapsed}
-            />*/}
+            <UncontrolledRatingMemo/>
+            <OnOffMemo on={on} onClick={setOnHandler}/>
+            <OnOffMemo on={on} onClick={setOnHandler}/>
+            <UnContrOnOffMemo/>
+            <RatingMemo value={ratingValue} onClick={setRatingValue}/>
+            <RatingMemo value={ratingValue} onClick={setRatingValue}/>
+            <PageTitle title={"This is app component"}/>
+            <UncontrolledAccordionMemo titleValue={"uncontrolled Users"}/>
+
         </div>
     )
 }

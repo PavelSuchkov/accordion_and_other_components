@@ -6,7 +6,9 @@ export type UncontrolledRatingPropsType = {
     defaultValue?: ValueType
 }
 
-export function UncontrolledRating(props: UncontrolledRatingPropsType) {
+export const UncontrolledRatingMemo = React.memo(UncontrolledRating)
+
+function UncontrolledRating(props: UncontrolledRatingPropsType) {
 
     const [ratingValue, setRatingValue] = useState<ValueType>(props.defaultValue ? props.defaultValue : 0)
 

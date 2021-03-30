@@ -12,8 +12,9 @@ export type AccordionPropsType = {
     items: ItemType[]
     onClick: (value: any) => void
 }
+export const AccordionMemo = React.memo(Accordion)
 
-export function Accordion(props: AccordionPropsType) {
+function Accordion(props: AccordionPropsType) {
     return (<div>
         <AccordionTitle title={props.titleValue}
                         onClick={props.onChange}

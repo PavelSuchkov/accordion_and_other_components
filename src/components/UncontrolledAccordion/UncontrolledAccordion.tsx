@@ -4,11 +4,8 @@ import {reducer, TOGGLE_COLLAPSED} from "./reducer";
 type AccordionPropsType = {
     titleValue: string;
 }
-/*
-const  reducer = () => {
 
-}*/
-
+export const UncontrolledAccordionMemo = React.memo(UncontrolledAccordion)
 
 function UncontrolledAccordion(props: AccordionPropsType) {
 
@@ -40,4 +37,3 @@ function AccordionBody() {
     </ul>)
 }
 
-export default UncontrolledAccordion;

@@ -12,6 +12,8 @@ export type SelectPropsType = {
     items: ItemType[]
 }
 
+export const SelectMemo = React.memo(Select)
+
 export function Select(props: SelectPropsType) {
 
     const [active, setActive] = useState(false);

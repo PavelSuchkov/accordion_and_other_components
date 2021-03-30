@@ -4,7 +4,7 @@ type OnOffType = {
     defaultOn?: boolean
 }
 
-
+export const UnContrOnOffMemo = React.memo(UnContrOnOff)
 
 function UnContrOnOff(props: OnOffType) {
 
@@ -52,4 +52,3 @@ function UnContrOnOff(props: OnOffType) {
 
 }
 
-export default UnContrOnOff;
