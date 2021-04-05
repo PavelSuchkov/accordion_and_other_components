@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 
 export default {
     title: 'useMemo'
@@ -62,7 +62,8 @@ export const HelpsToReactMemo = () => {
     const [users, setUsers] = useState(['Pasha', 'Lesha', 'Yura', 'Dima']);
 
     const newArray = useMemo(() => {
-        return  users.filter( u => u.indexOf('s') > -1)},[users]);
+        return users.filter(u => u.indexOf('s') > -1)
+    }, [users]);
 
     const addUser = () => {
         const newUsers = [...users, 'newUser']
@@ -70,11 +71,57 @@ export const HelpsToReactMemo = () => {
     }
 
     return <>
-        <button onClick={() => {setCounter(counter + 1)}}>+</button>
+        <button onClick={() => {
+            setCounter(counter + 1)
+        }}>+
+        </button>
         <button onClick={addUser}>Add User</button>
         {counter}
         <Users users={newArray}/>
     </>
 
 }
-// }
+
+const BooksSecret = (props: {/* books: Array<string>*/ addBook: () => void }) => {
+    console.log('Books was rendered')
+    return <div>
+        <button onClick={props.addBook}>Add Book</button>
+        {/*{props.books.map((b, i) => <div key={i}>{b}</div>)}*/}
+    </div>
+}
+
+const Book = React.memo(BooksSecret);
+
+
+export const LikeUseCallBack = () => {
+
+    console.log('LikeUseCallBack')
+    const [counter, setCounter] = useState(0);
+    const [books, setBooks] = useState(['React', 'HTML', 'JS', 'Redux']);
+
+
+    /*const newBooks = useMemo(() => {
+        return books.filter(b => b.toLowerCase().indexOf('e')> -1 )
+    }, [books]);
+*/
+    const addBook = () => {
+        const newBooks = [...books, 'Angular']
+        setBooks(newBooks)
+    }
+
+    const memoizedAddBook = useMemo( () => {
+        return addBook
+    }, [books])
+
+    const memoizedAddBookUC = useCallback(() =>{
+        const newBooks = [...books, 'Angular']
+        setBooks(newBooks)
+    }, [books])
+
+    return <>
+        <button onClick={() => {setCounter(counter + 1)}}>+</button>
+        {counter}
+        <Book addBook={memoizedAddBook}/>
+    </>
+
+}
