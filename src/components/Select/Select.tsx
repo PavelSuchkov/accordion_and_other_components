@@ -66,8 +66,7 @@ export function Select(props: SelectPropsType) {
                 active &&
                 <div className={styles.items}>
                     {props.items.map(i => <div
-                        onMouseEnter={() => {
-                            (setHoveredElementValue(i.value))
+                        onMouseEnter={() => {(setHoveredElementValue(i.value))
                         }}
                         className={styles.item + ' ' + (hoveredItem === i ? styles.selected : '')}
                         key={i.value}
