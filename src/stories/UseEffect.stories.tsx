@@ -51,18 +51,13 @@ export const SetTimeOutExample = () => {
         }, 1000)
     }, [])
 
-
-
     return <>
         {/*<button onClick={() => {setCounter(counter + 1)}}>+</button>*/}
         counter =  {counter}
         {/*<button onClick={() => {setFake(fake + 1)}}>+</button>*/}
         fake =  {fake}
     </>
-
 }
-
-
 export const GetTimeExample = () => {
 
     const [seconds, setSeconds] = useState(0);

@@ -7,8 +7,6 @@ type PropsType = {
     mode?: 'digital' | 'analog'
 }
 
-
-
 export const Clock: React.FC<PropsType> = (props) => {
 
     const [date, setDate] = useState(new Date());

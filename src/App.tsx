@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import {AccordionMemo} from './components/Accordion/Accordion';
 import {UnContrOnOffMemo} from "./components/UncontrolledOnOff/UnContrOnOff";
 import {UncontrolledAccordionMemo} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {RatingMemo, RatingValueType} from "./components/Rating/Rating";
 import {OnOffMemo} from "./components/OnOff/OnOff";
 import {UncontrolledRatingMemo} from "./components/UncontrolledRating/UncontrolledRating";
-import {Select, SelectMemo} from "./components/Select/Select";
 
 
 function App() {

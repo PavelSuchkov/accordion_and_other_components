@@ -22,30 +22,30 @@ MenuCollapsedMode.args = {
 }
 
 export const CollapsedMode = () => <AccordionMemo titleValue={'CollapsedMode'}
-                                              collapsed={true}
-                                              onChange={callBack}
-                                              onClick={onItemClickCallback}
-                                              items={[]}/>
+                                                  collapsed={true}
+                                                  onChange={callBack}
+                                                  onClick={onItemClickCallback}
+                                                  items={[]}/>
 
 export const UnCollapsedMode = () => <AccordionMemo titleValue={'UnCollapsedMode'}
-                                                collapsed={false}
-                                                onChange={callBack}
-                                                onClick={onItemClickCallback}
-                                                items={[{title: 'React', value: 1},
-                                                    {title: `Js`, value: 2},
-                                                    {title: `Redux`, value: 3},
-                                                    {title: `Html`, value: 4}]}/>
+                                                    collapsed={false}
+                                                    onChange={callBack}
+                                                    onClick={onItemClickCallback}
+                                                    items={[{title: 'React', value: 1},
+                                                        {title: `Js`, value: 2},
+                                                        {title: `Redux`, value: 3},
+                                                        {title: `Html`, value: 4}]}/>
 
 export const ChangeAccordionMode = () => {
     const [value, setValue] = useState<boolean>(true);
     return <AccordionMemo titleValue={'Skills'}
-                      collapsed={value}
-                      onChange={() => setValue(!value)}
-                      onClick={onItemClickCallback}
-                      items={[{title: 'React', value: 1},
-                          {title: `Js`, value: 2},
-                          {title: `Redux`, value: 3},
-                          {title: `Html`, value: 4}]}/>
+                          collapsed={value}
+                          onChange={() => setValue(!value)}
+                          onClick={onItemClickCallback}
+                          items={[{title: 'React', value: 1},
+                              {title: `Js`, value: 2},
+                              {title: `Redux`, value: 3},
+                              {title: `Html`, value: 4}]}/>
 };
 
 
