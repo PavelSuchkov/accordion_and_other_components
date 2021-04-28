@@ -99,11 +99,6 @@ export const LikeUseCallBack = () => {
     const [counter, setCounter] = useState(0);
     const [books, setBooks] = useState(['React', 'HTML', 'JS', 'Redux']);
 
-
-    /*const newBooks = useMemo(() => {
-        return books.filter(b => b.toLowerCase().indexOf('e')> -1 )
-    }, [books]);
-*/
     const addBook = () => {
         const newBooks = [...books, 'Angular']
         setBooks(newBooks)

@@ -20,19 +20,25 @@ export const UE_Example_1 = () => {
     useEffect(() => {
         console.log('UseEffect only first render (Component did mount)')
         document.title = counter.toString();
-    }, [] )
+    }, [])
 
     useEffect(() => {
         console.log('UseEffect when counter was clicked')
         document.title = counter.toString();
-    }, [counter] )
+    }, [counter])
 
 
     return <>
-        <button onClick={() => {setCounter(counter + 1)}}>+</button>
-        counter =  {counter}
-        <button onClick={() => {setFake(fake + 1)}}>+</button>
-        fake =  {fake}
+        <button onClick={() => {
+            setCounter(counter + 1)
+        }}>+
+        </button>
+        counter = {counter}
+        <button onClick={() => {
+            setFake(fake + 1)
+        }}>+
+        </button>
+        fake = {fake}
     </>
 }
 
@@ -53,9 +59,9 @@ export const SetTimeOutExample = () => {
 
     return <>
         {/*<button onClick={() => {setCounter(counter + 1)}}>+</button>*/}
-        counter =  {counter}
+        counter = {counter}
         {/*<button onClick={() => {setFake(fake + 1)}}>+</button>*/}
-        fake =  {fake}
+        fake = {fake}
     </>
 }
 export const GetTimeExample = () => {
@@ -69,13 +75,13 @@ export const GetTimeExample = () => {
     useEffect(() => {
         console.log('Rerender 1234')
         setInterval(() => {
-            console.log('Rerender Component')
+            // console.log('Rerender Component')
             let date = new Date();
             setSeconds(date.getSeconds())
             setMinutes(date.getMinutes())
             setHours(date.getHours())
         }, 1000)
-    } )
+    })
 
 
     return <>
@@ -85,3 +91,48 @@ export const GetTimeExample = () => {
     </>
 
 }
+
+export const ResetEffectExample = () => {
+
+    const [counter, setCounter] = useState(1);
+
+    console.log('Component rendered');
+
+    useEffect(() => {
+        console.log('Effect occurred ' + counter)
+        return () => {
+            console.log('effect resettled')
+        }
+    }, [counter])
+
+    return <>
+        counter = {counter}
+        <button onClick={() => {setCounter(counter + 1) } }>+</button>
+
+    </>
+}
+
+
+export const KeysTrackerExample = () => {
+
+    const [text, setText] = useState('');
+
+    console.log('Component rendered with ' + text);
+
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            console.log(e.key)
+            setText(state => state + ' ' + e.key)
+        }
+       window.addEventListener('keypress' ,handler )
+
+        return () => {
+            window.removeEventListener('keypress' ,handler)
+        }
+    }, [text])
+
+    return <>
+        typed text = {text}
+    </>
+}
+
