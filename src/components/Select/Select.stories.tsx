@@ -46,9 +46,9 @@ export const ExampleWithUseMemoByCityTitle = () => {
 
     const [value, setValue] = useState(null);
 
-    const newCitiesArr = useMemo( () => {
-        return cities.filter( c => c.title.toLowerCase().indexOf('a')  > -1)
-    },[value])
+    const newCitiesArr = useMemo(() => {
+        return cities.filter(c => c.title.toLowerCase().indexOf('a') > -1)
+    }, [value])
 
     return (
         <>  <SelectMemo onChange={setValue}
@@ -68,9 +68,9 @@ export const ExampleSelectWithUseMemoByCityValue = () => {
 
     const [value, setValue] = useState(null);
 
-    const newCitiesArr = useMemo( () => {
-        return cities.filter( c => +c.value < 5)
-    },[value])
+    const newCitiesArr = useMemo(() => {
+        return cities.filter(c => +c.value < 5)
+    }, [value])
 
     return (
         <>  <SelectMemo onChange={setValue}

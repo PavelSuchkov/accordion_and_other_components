@@ -65,6 +65,7 @@ export function Select(props: SelectPropsType) {
             {
                 active &&
                 <div className={styles.items}>
+
                     {props.items.map(i => <div
                         onMouseEnter={() => {(setHoveredElementValue(i.value))
                         }}
@@ -74,7 +75,9 @@ export function Select(props: SelectPropsType) {
                             onClickItem(i.value)
                         }}>
                         {i.title}</div>)}
+
                 </div>}
+
         </div>
     )
 }
